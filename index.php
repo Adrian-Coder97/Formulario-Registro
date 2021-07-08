@@ -28,6 +28,7 @@
         <div class="row mt-2 d-flex justify-content-center">
             <div class="col-10 col-md-6 col-xxl-4 mt-4">
                 <form method="POST" action="procesar_registro.php" class="form-control p-3 needs-validation" novalidate>
+                    <h1 class="text-center">Registro</h1>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="nombre_us" name="nombre_us" required placeholder="Nombre de usuario">
                         <div class="valid-feedback">

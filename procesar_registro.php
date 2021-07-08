@@ -1,8 +1,9 @@
 <?php
 /*----------------------------------MOSTRAR LOS ELEMENTOS (CONSULTA)--------------------------------------*/
-include_once "conexion.php";
+
 
 if ($_POST) {
+    include_once "conexion.php";
     /*recibir los datos*/
 
     $nombre_us = $_POST["nombre_us"];
@@ -54,11 +55,10 @@ if ($_POST) {
         $sql_agregar = "INSERT INTO accounts (username, email, mi_password) VALUES (?,?,?)"; //signos de interrogacion por seguridad
         $sentencia_agregar = $pdo->prepare($sql_agregar);
         $sentencia_agregar->execute(array($nombre_us, $email_us, $contra_us)); //en el array van el el mismo orden que irian en los signos de interrogracion 
+        session_start();
 
-        /*cerrar la conexion de agregar:*/
-        $sentencia_agregar = null;
-        $pdo = null;
-        header("location:index.php"); //recargar la pagina cuando se envien los datos 
+        $_SESSION['success'] = "exito";
+        header("location:thankyou.php"); //recargar la pagina cuando se envien los datos 
         echo "datos agregados" . "<br>";
         echo "DATA:" . "<br>";
         echo $nombre_us . "<br>";
@@ -83,5 +83,11 @@ if ($_POST) {
         echo $email_error . "<br>";
         echo $pass_error . "<br>";
         echo $repass_error . "<br>";
+        $_SESSION['success'] = null;
+        $var_value = null;
+        $sentencia_agregar = null;
+        $pdo = null;
     }
+} else {
+    header("Location: index.php");
 }
