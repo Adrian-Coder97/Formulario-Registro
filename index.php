@@ -65,9 +65,9 @@
                             Repite tu contraseña
                         </div>
                     </div>
-
+    
                     <div class="col-12">
-                        <button id="boton_register" class="btn btn-primary w-100" type="submit">Registrarse</button>
+                        <button id="boton_register" class="btn btn-primary w-100" type="submit" name="submit">Registrarse</button>
                     </div>
                 </form>
             </div>

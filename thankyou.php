@@ -9,7 +9,6 @@ if ($var_value === "exito") {
     $pdo = null;
 
 ?>
-
     <!DOCTYPE html>
     <html lang="en">
 
