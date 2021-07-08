@@ -52,9 +52,12 @@ if ($_POST) {
 
     if ($name_error == '' && $email_error == '' && $pass_error == '' && $repass_error == '') {
         /*enviarlos a la base de datos*/
+
+        $buenpass = password_hash($contra_us, PASSWORD_DEFAULT, ['cost' => 10]);
+
         $sql_agregar = "INSERT INTO accounts (username, email, mi_password) VALUES (?,?,?)"; //signos de interrogacion por seguridad
         $sentencia_agregar = $pdo->prepare($sql_agregar);
-        $sentencia_agregar->execute(array($nombre_us, $email_us, $contra_us)); //en el array van el el mismo orden que irian en los signos de interrogracion 
+        $sentencia_agregar->execute(array($nombre_us, $email_us, $buenpass)); //en el array van el el mismo orden que irian en los signos de interrogracion 
         session_start();
 
         $_SESSION['success'] = "exito";
