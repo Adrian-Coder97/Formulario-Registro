@@ -101,7 +101,7 @@ if (isset($_POST['submit'])) {
                 header("Location: thankyou.php");
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                header("Location: index.php");
+                //header("Location: index.php");
             }
             /* echo "datos agregados" . "<br>";
             echo "DATA:" . "<br>";

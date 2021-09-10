@@ -15,16 +15,6 @@
 
 <body class="bg-dark text-white">
     <div class="container-fluid">
-        <nav class="navbar navbar-light bg-dark text-white">
-            <div class="container-fluid">
-                <a class="text-decoration-none text-white" href="./"><img class="imagenLibro" src="./img/book.png" alt="">Mi Lista</a>
-                <form method="POST" class="d-flex float-end needs-validation" novalidate>
-                    <input class="form-control me-2" type="text" placeholder="Usuario" name="login_us" required>
-                    <input class="form-control me-2" type="password" placeholder="Contraseña" name="passLogin_us" required>
-                    <button class="btn btn-outline-success" type="submit">Login</button>
-                </form>
-            </div>
-        </nav>
         <div class="row mt-2 d-flex justify-content-center">
             <div class="col-10 col-md-6 col-xxl-4 mt-4">
                 <form method="POST" action="procesar_registro.php" class="form-control p-3 needs-validation" novalidate>
